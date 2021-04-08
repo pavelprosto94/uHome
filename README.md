@@ -3,6 +3,14 @@
 Home screen for Ubuntu Touch
 
 ![screenshot.jpg](_resources/screenshot.jpg)
+
+Sometimes it is necessary to minimize the active application to the tray. So that the next time you turn on the screen, it would be active, but not occupy an active place. **uHome**, a home screen with widgets support, will help you with this task.
+
+The application has its own built-in widgets. In addition, you can download other widgets to customize your home screen more.
+- **An analog clock** will always show you the current time, and a variety of themes allow you to customize it to your liking.
+- **Stickers** will help you remind you of the most important things. And their striking design attracts attention.
+- **The link** can create an internet link or launch an application with URLdispatcher support.
+
 ## Build
 In the terminal, go to our directory with the project and enter the command:
     
