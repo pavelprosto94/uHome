@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg25"
+   width="512"
+   height="512">
+  <metadata
+     id="metadata29">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#c3edf5;}.cls-2{fill:#4d91bb;}.cls-3{fill:#87dbec;}.cls-4{fill:#4dbab4;}.cls-5{fill:#e88f8d;}.cls-6{fill:#ffda75;}.cls-7{fill:#c2e085;}</style>
+  </defs>
+  <g
+     data-name="02 Website Optimization"
+     id="_02_Website_Optimization">
+    <rect
+       class="cls-1"
+       height="90"
+       width="90"
+       x="19"
+       y="19"
+       id="rect8"
+       style="fill:#fdece7;fill-opacity:1" />
+    <rect
+       class="cls-2"
+       height="20"
+       width="90"
+       x="19"
+       y="19"
+       id="rect10"
+       style="fill:#e95420;fill-opacity:1" />
+    <path
+       class="cls-3"
+       d="m 56.32,109 a 11.92,11.92 0 0 1 23.84,0 H 109 v -8 l -10.57,-2.5 -6,-10.4 3.14,-10.39 -13.89,-8 -7.44,7.89 h -12 L 54.8,69.69 40.91,77.69 44,88.1 38,98.5 27.47,101 v 8 z"
+       id="path12"
+       style="fill:#f5b199;fill-opacity:1" />
+    <path
+       class="cls-4"
+       d="m 52.08,109 a 11.92,11.92 0 0 1 23.84,0 h 28.85 v -8 L 94.2,98.5 88.2,88.1 91.34,77.71 77.45,69.71 70,77.6 H 58 l -7.43,-7.91 -13.89,8 3.13,10.41 -6,10.4 -10.57,2.5 v 8 z"
+       id="path14"
+       style="fill:#77216f;fill-opacity:1" />
+    <circle
+       class="cls-5"
+       cx="26.24"
+       cy="29"
+       r="3"
+       id="circle16" />
+    <circle
+       class="cls-6"
+       cx="35.240002"
+       cy="29"
+       r="3"
+       id="circle18" />
+    <circle
+       class="cls-7"
+       cx="44.240002"
+       cy="29"
+       r="3"
+       id="circle20" />
+    <polygon
+       class="cls-3"
+       points="109,43.5 109,39 19,39 "
+       id="polygon22"
+       style="fill:#f5b199;fill-opacity:1" />
+  </g>
+</svg>

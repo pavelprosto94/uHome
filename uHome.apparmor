@@ -1,0 +1,13 @@
+{
+    "policy_groups": [
+        "networking",
+        "content_exchange",
+        "content_exchange_source"
+    ],
+    "policy_version": 16.04,
+    "read_path": [
+        "/var/lib/AccountsService/users/",
+        "/var/lib/lightdm-data/phablet/ubuntu-system-settings/Pictures/",
+        "/usr/share/backgrounds/"
+    ]
+}

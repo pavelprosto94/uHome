@@ -1,0 +1,9 @@
+[Desktop Entry]
+_Name=Home
+Exec=qmlscene %U qml/Main.qml
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+X-Ubuntu-Splash-Image=src/img/home.svg
+X-Ubuntu-Splash-Color=#000
