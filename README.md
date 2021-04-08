@@ -2,6 +2,13 @@
 
 Home screen for Ubuntu Touch
 
+![screenshot.jpg](_resources/screenshot.jpg)
+## Build
+In the terminal, go to our directory with the project and enter the command:
+    
+    clickable
+    
+The project will compile and run on our phone
 ## License
 
 Copyright (C) 2021  Pavel Prosto
