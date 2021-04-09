@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uhome.pavelprosto\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-09 19:01+0000\n"
+"POT-Creation-Date: 2021-04-09 21:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,11 @@ msgstr ""
 msgid "    Import file from:"
 msgstr ""
 
-#: ../qml/Main.qml:298
+#: ../qml/Main.qml:42
+msgid "en"
+msgstr ""
+
+#: ../qml/Main.qml:292
 msgid "Menu"
 msgstr ""
 

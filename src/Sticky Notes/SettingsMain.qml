@@ -12,15 +12,23 @@ Page {
             title: "Edit note:"
         }
         property var backgroundActions: ["red.png", "orange.png", "yellow.png", "green.png", "blue.png", "purple.png", "pink.png", "white.png"]
-        property var backgroundToColor: ["#fbd5ce", "#fde5cf", "#fff4bc", "#d1ecc6", "#d3f5fc", "#ccd9fc", "#f5d4fd"]
+        property var backgroundToColor: ["#fbd5ce", "#fde5cf",    "#fff4bc",    "#d1ecc6",   "#d3f5fc",  "#ccd9fc",    "#f5d4fd",  "#ffffff"]
       
-      FontLoader { id: pecitaFont; source: "20180.otf" }
+      FontLoader { name: "Pecita"; source: "20180.otf" }
+      FontLoader { name: "Icegirl"; source: "20319.otf" }
+      FontLoader { name: "Casual Contact MF"; source: "19081.ttf" }
+
      Component.onCompleted: {
        var tmp=widgets.get(widgets.target_obj).snd
        if (tmp.settings.length>0){ widgetMain.settings=tmp.settings}
        tx1.text=widgetMain.textnote
        tx1.font.pixelSize=widgetMain.fontsize
        sl1.value=parseFloat(tmp.settings[2])
+       for (var j = 0; j < os1.model.length; j++){
+         if (os1.model[j]==tmp.settings[3]){
+           os1.selectedIndex=j
+         }
+       }
       }
         
     Rectangle{
@@ -55,7 +63,7 @@ Page {
                 }
                 autoSize : true
                 font.pixelSize: widgetMain.fontsize
-                font.family: pecitaFont.name
+                font.family: widgetMain.fontName
                 wrapMode: Text.WordWrap
                 //cursorVisible: true
                 onCursorVisibleChanged: {
@@ -181,6 +189,36 @@ Page {
           widgetMain.fontsize=sl1.value*units.gu(1)
         }
     }
+    Text {
+        id: label3
+        text: "Font style: "
+        color: theme.palette.normal.backgroundText
+        font.pixelSize: units.gu(2)
+        anchors{
+          top: sl1.bottom
+          topMargin: units.gu(2)
+          left: parent.left
+          leftMargin: units.gu(2)
+        }
+    }
+    OptionSelector{
+      id: os1
+      anchors{
+          top: label3.bottom
+          topMargin: units.gu(0.5)
+          left: parent.left
+          leftMargin: units.gu(2)
+          right: parent.right
+          rightMargin: units.gu(2)
+        }
+        model: ["DejaVu Sans","Pecita", "Icegirl", "Casual Contact MF"]
+        containerHeight: itemHeight*4
+        onDelegateClicked:{
+          if (index>-1){
+            widgetMain.fontName=model[index].toString()
+          }
+        }
+    }
     }}
 
     OpenButton{
@@ -202,7 +240,7 @@ Page {
     }
     onReleased: {
       var tosend = widgets.get(widgets.target_obj).snd
-      var newSet = [widgetMain.backgroundsource, tx1.text, sl1.value.toString()]
+      var newSet = [widgetMain.backgroundsource, tx1.text, sl1.value.toString(), widgetMain.fontName]
       tosend.settings = newSet
       widgets.get(widgets.target_obj).snd=tosend
       waitScreen.visible=false

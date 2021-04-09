@@ -13,13 +13,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/*
-Аналоговые часы +
-Cсылка +
-Погода
-Фото
-Заметка +
-*/
 import QtQuick 2.7
 import Ubuntu.Components 1.3
 import QtQuick.Controls 2.2
@@ -41,11 +34,12 @@ MainView {
     property int ysize: {if (needrot==0) {Math.floor(height/units.gu(10))} else {Math.floor(width/units.gu(10))}}
     width: units.gu(45)
     height: units.gu(75)
-
+    
     Component.onCompleted: {
     i18n.domain = "uhome.pavelprosto"
     }
 
+    property string locale: i18n.tr("en")
     Settings {
     id: settings
     property string background_source: ""
@@ -297,7 +291,7 @@ StackView {
     height: units.gu(35)
     hint.text: i18n.tr("Menu")   
     contentComponent:  MenuPage{
-        width: parent.width
+        width: main.width
         height: bottomEdge.height
     }
     property bool mouseenbl : false
@@ -372,7 +366,8 @@ StackView {
                         sttngs.push(tmp[j])
                     }
                 newItem.snd={fileName:returnValue[0], settings: sttngs}
-                widgets.append(newItem)
+                if ((newItem.xl< widgets_layer.width) && (newItem.yl< widgets_layer.height))
+                {widgets.append(newItem)}
                 });
             importModule('main', function() {
                 console.log('module imported');
@@ -418,4 +413,17 @@ StackView {
         visible: false
         anchors.fill: parent
     }
+//     ListView {
+//     anchors.fill: parent; 
+//     model: Qt.fontFamilies()
+
+//     delegate: Item {
+//         height: 40; 
+//         width: ListView.view.width
+//         Text {
+//             anchors.centerIn: parent
+//             text: modelData; 
+//         }
+//     }
+// }
 }

@@ -21,7 +21,11 @@ msgstr ""
 msgid "    Import file from:"
 msgstr "    Добавить файлы из:"
 
-#: ../qml/Main.qml:298
+#: ../qml/Main.qml:42
+msgid "en"
+msgstr "ru"
+
+#: ../qml/Main.qml:292
 msgid "Menu"
 msgstr "Меню"
 
@@ -33,15 +37,15 @@ msgstr "Добавить тестовый виджет"
 msgid "Add widgets"
 msgstr "Добавить виджет"
 
-#: ../qml/MenuPage.qml:111
+#: ../qml/MenuPage.qml:112
 msgid "Edit home screen"
 msgstr "Редактировать домашний экран"
 
-#: ../qml/MenuPage.qml:128
+#: ../qml/MenuPage.qml:130
 msgid "Smart restart"
 msgstr "Интелектуальный перезапуск"
 
-#: ../qml/MenuPage.qml:157
+#: ../qml/MenuPage.qml:159
 msgid "Donate"
 msgstr "Помочь"
 
