@@ -96,14 +96,16 @@ class WidgetsThread(Thread):
       for line in text:
         if line[0:line.find(":")]=="file":
           filename=line[line.find(":")+1:]
+          if "/src/" in filename:
+            filename=glob.SCRIPTPATH+filename[filename.find("/src/")+4:]
         if line[0:line.find(":")]=="x":
-          x=int(line[line.find(":")+1:])
+          x=float(line[line.find(":")+1:])
         if line[0:line.find(":")]=="y":
-          y=int(line[line.find(":")+1:])
+          y=float(line[line.find(":")+1:])
         if line[0:line.find(":")]=="w":
-          w=int(line[line.find(":")+1:])
+          w=float(line[line.find(":")+1:])
         if line[0:line.find(":")]=="h":
-          h=int(line[line.find(":")+1:])
+          h=float(line[line.find(":")+1:])
         if line[0:line.find(":")]=="settings":
           if "|" in line:
             tmpline=line[line.find(":")+1:]

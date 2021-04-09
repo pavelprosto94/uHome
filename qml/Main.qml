@@ -37,6 +37,8 @@ MainView {
     automaticOrientation: true
     property real needrot: if (width>height){-90}else{0}
     property var activeTransfer
+    property int xsize: {if (needrot==0) {Math.floor(width/units.gu(10))} else {Math.floor(height/units.gu(10))}}
+    property int ysize: {if (needrot==0) {Math.floor(height/units.gu(10))} else {Math.floor(width/units.gu(10))}}
     width: units.gu(45)
     height: units.gu(75)
 
@@ -73,8 +75,8 @@ StackView {
     Rectangle {
         id: widgets_layer
         rotation: main.needrot
-        width: units.gu(40)
-        height: units.gu(70)
+        width: xsize*units.gu(10)
+        height: ysize*units.gu(10)
         anchors{
             top:parent.top
             horizontalCenter: parent.horizontalCenter
@@ -136,8 +138,8 @@ StackView {
             plus_model.clear()
             warea_model.clear()
             plus_layer_anim1.start()
-            for (var x = 0; x < 5; x++){
-                for (var y = 0; y < 8; y++){
+            for (var x = 0; x < xsize+1; x++){
+                for (var y = 0; y < ysize+1; y++){
                     var newItem = {}
                     newItem.xl=units.gu(10)*x-units.gu(5)
                     newItem.yl=units.gu(10)*y-units.gu(5)
@@ -293,7 +295,7 @@ StackView {
     BottomEdge {
     id: bottomEdge
     height: units.gu(35)
-    hint.text: "Menu"    
+    hint.text: i18n.tr("Menu")   
     contentComponent:  MenuPage{
         width: parent.width
         height: bottomEdge.height
@@ -360,10 +362,10 @@ StackView {
             setHandler('addwidget', function(returnValue) {
                 var newItem = {}
                 var sttngs = new Array (0)
-                newItem.xl=returnValue[1]
-                newItem.yl=returnValue[2]
-                newItem.ww=returnValue[3]
-                newItem.wh=returnValue[4]
+                newItem.xl=returnValue[1]*units.gu(1)
+                newItem.yl=returnValue[2]*units.gu(1)
+                newItem.ww=returnValue[3]*units.gu(1)
+                newItem.wh=returnValue[4]*units.gu(1)
                 if (returnValue[5].length) {
                     var tmp = returnValue[5]
                     for (var j = 0; j < tmp.length; j++)
@@ -381,10 +383,10 @@ StackView {
             var outtxt = ""
             for (var i = 0; i < widgets.count; i++){
                 outtxt += "file:"+widgets.get(i).snd.fileName+"\n"
-                outtxt += "x:"+widgets.get(i).xl+"\n"
-                outtxt += "y:"+widgets.get(i).yl+"\n"
-                outtxt += "w:"+widgets.get(i).ww+"\n"
-                outtxt += "h:"+widgets.get(i).wh+"\n"
+                outtxt += "x:"+widgets.get(i).xl/units.gu(1)+"\n"
+                outtxt += "y:"+widgets.get(i).yl/units.gu(1)+"\n"
+                outtxt += "w:"+widgets.get(i).ww/units.gu(1)+"\n"
+                outtxt += "h:"+widgets.get(i).wh/units.gu(1)+"\n"
                 var outsettings = ""
                 var tmp = widgets.get(i).snd.settings
                 for (var j = 0; j < tmp.length; j++)

@@ -8,77 +8,79 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uhome.pavelprosto\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-09 19:01+0000\n"
+"POT-Creation-Date: 2021-04-09 18:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../qml/ImportPage.qml:29
 msgid "    Import file from:"
-msgstr ""
+msgstr "    Добавить файлы из:"
 
 #: ../qml/Main.qml:298
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: ../qml/MenuPage.qml:50
 msgid "Add test widget"
-msgstr ""
+msgstr "Добавить тестовый виджет"
 
 #: ../qml/MenuPage.qml:85
 msgid "Add widgets"
-msgstr ""
+msgstr "Добавить виджет"
 
-#: ../qml/MenuPage.qml:112
+#: ../qml/MenuPage.qml:111
 msgid "Edit home screen"
-msgstr ""
+msgstr "Редактировать домашний экран"
 
-#: ../qml/MenuPage.qml:130
+#: ../qml/MenuPage.qml:128
 msgid "Smart restart"
-msgstr ""
+msgstr "Интелектуальный перезапуск"
 
-#: ../qml/MenuPage.qml:159
+#: ../qml/MenuPage.qml:157
 msgid "Donate"
-msgstr ""
+msgstr "Помочь"
 
 #: ../qml/MyDialog.qml:12
 msgid "Ok"
-msgstr ""
+msgstr "Да"
 
 #: ../qml/MyDialog.qml:54 ../qml/MyDialog.qml:63 ../qml/MyDialog.qml:80
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 #: ../qml/WidgetArea.qml:143 ../qml/WidgetHubItem.qml:97
 msgid "Are you shure remove this widget?"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить виджет?"
 
 #: ../qml/WidgetArea.qml:145 ../qml/WidgetHubItem.qml:99
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: ../qml/WidgetArea.qml:146 ../qml/WidgetHubItem.qml:100
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: ../qml/WidgetHub.qml:11
 msgid "    Add widget"
-msgstr ""
+msgstr "    Добавить виджет"
 
 #: ../qml/WidgetHub.qml:37
 msgid ""
 "Press and hold the widget icon\n"
 "if you want to delete it."
 msgstr ""
+"Нажмите и удерживаете иконку виджета,\n"
+"если желаете его удалить."
 
 #: ../qml/WidgetHubItem.qml:104
 msgid "This widget cannot be deleted."
-msgstr ""
+msgstr "Этот виджет не может быть удален"
 
 #: uHome.desktop.in.h:1
 msgid "Home"
-msgstr ""
+msgstr "Домашний экран"

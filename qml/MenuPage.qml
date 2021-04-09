@@ -108,6 +108,7 @@ OpenButton{
             top: addWidgetBut.bottom
             margins: units.gu(1)
         }
+        iconOffset: true
         text: i18n.tr("Edit home screen")
         iconName: "compose"
         onClicked:{
@@ -125,6 +126,7 @@ OpenButton{
             top: chandeWidgetBut.bottom
             margins: units.gu(1)
         }
+        iconOffset: true
         text: i18n.tr("Smart restart")
         iconSource: "../src/img/magic.svg"
         imgColored: true

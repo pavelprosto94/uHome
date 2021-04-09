@@ -27,7 +27,18 @@ Page {
         onClicked:{ 
         stack.pop()
         }}}
-
+Text{
+    anchors{
+        horizontalCenter: parent.horizontalCenter
+        bottom: parent.bottom
+        bottomMargin: units.gu(2)
+        }
+        horizontalAlignment : Text.AlignHCenter
+        text:  i18n.tr("Press and hold the widget icon\nif you want to delete it.")
+        font.pixelSize: units.gu(1.5)
+        color: theme.palette.normal.backgroundText
+        opacity: 0.8
+}
 Flickable {
     clip: true
     anchors{
@@ -45,12 +56,11 @@ Flickable {
         if (widgetHubListModel.clickanimtarget!=null) {widgetHubListModel.clickanimtarget.visible=false}
         widgetHubListModel.enablmouse=true
       }
-    
     Rectangle {
     id :rectRoot
         width: root.width
         height: {childrenRect.height+units.gu(2)}
-        color: theme.palette.normal.background
+        color: "transparent"
     Grid {
     topPadding: units.gu(2)
     anchors.horizontalCenter: parent.horizontalCenter
