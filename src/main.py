@@ -20,6 +20,7 @@ import threading
 from threading import Thread
 import pyotherside
 import tarfile
+from urllib.parse import unquote
 
 def installWidget(adr=""):
   rez="Incorect widget file"
@@ -75,6 +76,36 @@ def getWidgetsSettings(ind, adr):
     conf_adr=adr+"/SettingsMain.qml"
   return [ind,conf_adr]
 
+def createLink(txt=""):
+  if txt!="":
+    txt=unquote(txt)
+    backgroundcolor = "#FFCE2029"
+    iconsource = "img/link.svg"
+    linkUrl = "https://liberapay.com/pavelprosto"
+    linktext = "Link"
+    linkcolor = "#FFFFFFFF"
+    scpr=[txt]
+    if "&" in txt:
+      scpr=txt.split("&")
+    for line in scpr:
+      if "name=" in line:
+        linktext=line[line.find("=")+1:]
+      if "backgroundcolor=" in line:
+        backgroundcolor=line[line.find("=")+1:]
+      if "icon=" in line:
+        iconsource=line[line.find("=")+1:]
+      if "url=" in line:
+        linkUrl=line[line.find("=")+1:]
+    filename="../src/Link/Main.qml"
+    x=20
+    y=40
+    w=10
+    h=10
+    settg=[backgroundcolor,linktext,linkcolor,iconsource,linkUrl]
+    if os.path.exists(filename.replace("../src",  glob.SCRIPTPATH)):
+      pyotherside.send('addwidget', [filename,x,y,w,h,settg])
+  return txt
+
 class WidgetsThread(Thread):
   def __init__(self):
     Thread.__init__(self)
@@ -123,6 +154,7 @@ class WidgetsThread(Thread):
           h=0
           settg=[]
       f.close()
+  pyotherside.send('finalizewidget', [])
 
 class Widgets:
   def __init__(self):

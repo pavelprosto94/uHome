@@ -12,7 +12,7 @@ Item {
     property string iconsource: "img/morph-browser.svg"
     property string linkUrl: "https://liberapay.com/pavelprosto"
     property string linktext: "Internet Link"
-    property string linkcolor: "Internet Link"
+    property string linkcolor: "#FFFFFFFF"
     onSettingsChanged:{
         if (settings.length>0) backgroundcolor=settings[0]
         if (settings.length>1) linktext=settings[1]
@@ -20,12 +20,6 @@ Item {
         if (settings.length>3) iconsource=settings[3]
         if (settings.length>4) linkUrl=settings[4]
     }
-Rectangle{
-    id: background_source
-    anchors.fill: parent
-    opacity: 0
-    radius: units.gu(1.5)
-}
     Rectangle{
         id: rect
     anchors{
@@ -36,24 +30,33 @@ Rectangle{
     }
     color: backgroundcolor
     radius: units.gu(1.5)
-    
+
+Rectangle{
+    id: background_source
+    anchors.fill: parent
+    opacity: 0
+    radius: units.gu(1.5)
+}
 Image{
     id: ico_source
     anchors.fill: parent
     source: iconsource
     smooth: true
-    antialiasing: true
     visible: false
     fillMode: Image.PreserveAspectCrop
     
 }
 ThresholdMask{
+    id: sr1
+    threshold: 0.4
+    spread: 0.5
     anchors.fill: parent
     source: ico_source
     maskSource: background_source
 }
 }
 Text{
+    id: sr2
     anchors{
         top: rect.bottom
         horizontalCenter: parent.horizontalCenter
@@ -61,6 +64,25 @@ Text{
     text: linktext
     color: linkcolor
 }
+
+DropShadow {
+        anchors.fill: rect
+        horizontalOffset: units.gu(0.2)
+        verticalOffset: units.gu(0.2)
+        radius: units.gu(0.3)
+        samples: 9
+        color: "#AA000000"
+        source: sr1
+    }
+DropShadow {
+        anchors.fill: sr2
+        horizontalOffset: units.gu(0.2)
+        verticalOffset: units.gu(0.15)
+        radius: units.gu(0.3)
+        samples: 7
+        color: "#AA000000"
+        source: sr2
+    }
 MouseArea{
     anchors.fill: parent
     onClicked: {
