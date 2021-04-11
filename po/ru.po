@@ -58,7 +58,7 @@ msgid "Close"
 msgstr "Закрыть"
 
 #: ../qml/WidgetArea.qml:143 ../qml/WidgetHubItem.qml:97
-msgid "Are you shure remove this widget?"
+msgid "Are you shure to remove this widget?"
 msgstr "Вы уверены, что хотите удалить виджет?"
 
 #: ../qml/WidgetArea.qml:145 ../qml/WidgetHubItem.qml:99

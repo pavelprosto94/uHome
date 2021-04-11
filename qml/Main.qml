@@ -84,7 +84,6 @@ StackView {
                 yScale: {1-0.0625*(plus_layer.animopa/255)}
                 }
         color: "transparent"
-
     Repeater{
         model: widgets
         delegate: QDynamicLabel{
@@ -100,7 +99,22 @@ StackView {
     id: widgets
     property int target_obj
     }
-
+    MouseArea{
+        visible: {if (plus_layer.visible){false}else{true}}
+        anchors.fill: parent
+        propagateComposedEvents:true
+        onPressAndHold: {
+            var widenbl=false
+            for (var i = 0; i < widgets.count; i++)
+            if (((mouse.x>widgets.get(i).xl) && (mouse.x<widgets.get(i).xl+widgets.get(i).ww)) && ((mouse.y>widgets.get(i).yl) && (mouse.y<widgets.get(i).yl+widgets.get(i).wh)))
+            {widenbl=true}
+            if (widenbl){
+            plus_layer.showed()
+            }else{
+            bottomEdge.commit()
+            }
+        }
+    }
     Rectangle {
         id: plus_layer
         signal showed
@@ -341,7 +355,8 @@ StackView {
     }
     Python {
         id: python_main
-
+        property bool ready: false
+        property string inurl: ""
         Component.onCompleted: {
             addImportPath(Qt.resolvedUrl('../src/'));
             setHandler('error', function(returnValue) {
@@ -369,9 +384,14 @@ StackView {
                 if ((newItem.xl< widgets_layer.width) && (newItem.yl< widgets_layer.height))
                 {widgets.append(newItem)}
                 });
+            setHandler('finalizewidget', function() {
+
+            });
             importModule('main', function() {
                 console.log('module imported');
-                python_main.call('main.widgets.load', [], function() {})
+                python_main.call('main.widgets.load', [], function() {
+                    python_main.ready=true
+                })
             });
         }
         function saveWidgets(){
@@ -412,6 +432,21 @@ StackView {
         id: waitScreen
         visible: false
         anchors.fill: parent
+    }
+    Connections {
+    target: UriHandler
+    onOpened: {
+        if (uris.length > 0) {
+            for (var i=0; i < uris.length; i++) {
+            if (uris[i].indexOf("createlink/?")){
+            var txt=uris[i].substr(uris[i].indexOf("?")+1,uris[i].length)
+                python_main.call('main.createLink', [txt], function() {
+                    if (python_main.ready==true){
+                        python_main.saveWidgets();
+                        }
+            }) 
+        }}}
+    }
     }
 //     ListView {
 //     anchors.fill: parent; 

@@ -7,10 +7,11 @@
         "uHome": {
             "apparmor": "uHome.apparmor",
             "desktop":  "uHome.desktop",
+            "urls": "src/urls-dispatcher.json",
             "content-hub": "src/content-hub.json"
         }
     },
-    "version": "0.6.1",
+    "version": "0.7.0",
     "maintainer": "Pavel Prosto <pavelprosto94@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
