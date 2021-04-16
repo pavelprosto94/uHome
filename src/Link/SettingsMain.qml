@@ -171,10 +171,8 @@ Page {
           rightMargin: units.gu(2)
         }
 
-        Rectangle{
-          border.width: units.gu(0.2); 
-          border.color: theme.palette.normal.base
-          color: "transparent"
+        Checkerboard{
+          id: color1
           anchors{
             right: parent.right
             top: parent.top
@@ -183,22 +181,14 @@ Page {
             bottomMargin: -units.gu(0.5)
           }
           width: units.gu(5)
-          Checkerboard{
-            cellSide: units.gu(0.5)
+          onColorChanged: {
+            var newSet = [color.toString().toUpperCase(), tx1.text, widgetMain.linkcolor, widgetMain.iconsource, tx2.text]
+            widgetMain.settings=newSet
           }
-          Rectangle{
-            id: color1
-            anchors.fill: parent
-            border.width: units.gu(0.2); 
-            border.color: theme.palette.normal.base
-            onColorChanged: {
-              var newSet = [color.toString().toUpperCase(), tx1.text, widgetMain.linkcolor, widgetMain.iconsource, tx2.text]
-              widgetMain.settings=newSet
-            }
-         }
           MouseArea{
             anchors.fill: parent
             onClicked:{
+              colorPicker.setColor=color1.color
               colorPicker.obj_target=color1
               colorPicker.visible=true
             }
@@ -218,10 +208,8 @@ Page {
           right: parent.right
           rightMargin: units.gu(2)
         }
-        Rectangle{
-          border.width: units.gu(0.2); 
-          border.color: theme.palette.normal.base
-          color: "transparent"
+        Checkerboard{
+          id: color2
           anchors{
             right: parent.right
             top: parent.top
@@ -230,22 +218,14 @@ Page {
             bottomMargin: -units.gu(0.5)
           }
           width: units.gu(5)
-          Checkerboard{
-            cellSide: units.gu(0.5)
-          }
-          Rectangle{
-            id: color2
-            anchors.fill: parent
-            border.width: units.gu(0.2); 
-            border.color: theme.palette.normal.base
             onColorChanged: {
               var newSet = [widgetMain.backgroundcolor, tx1.text, color.toString().toUpperCase(), widgetMain.iconsource, tx2.text]
               widgetMain.settings=newSet
             }
-         }
           MouseArea{
             anchors.fill: parent
             onClicked:{
+              colorPicker.setColor=color2.color
               colorPicker.obj_target=color2
               colorPicker.visible=true
             }
@@ -412,7 +392,7 @@ Rectangle {
     onClicked: {
       tx1.text="Terminal"
       tx2.text="terminal://"
-      color1.color="#555555"
+      color1.color="#383838"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/terminal-app.svg", tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false
@@ -434,7 +414,7 @@ Rectangle {
     onClicked: {
       tx1.text="Calendar"
       tx2.text="calendar://"
-      color1.color="#555555"
+      color1.color="#383838"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/assets_calendar-app.png", tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false
@@ -456,7 +436,7 @@ Rectangle {
     onClicked: {
       tx1.text="Gallery"
       tx2.text="photo://"
-      color1.color="#0099ff"
+      color1.color="#006ce3"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/desktop_gallery-app.svg", tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false
@@ -478,7 +458,7 @@ Rectangle {
     onClicked: {
       tx1.text="Weather"
       tx2.text="weather://"
-      color1.color="#0099ff"
+      color1.color="#006ce3"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/app_weather-app.svg", tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false
@@ -500,7 +480,7 @@ Rectangle {
     onClicked: {
       tx1.text="Music"
       tx2.text="music://"
-      color1.color="#ff0055"
+      color1.color="#ff1c47"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/app_graphics_music-app.svg", tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false
@@ -522,7 +502,7 @@ Rectangle {
     onClicked: {
       tx1.text="Telegram"
       tx2.text="tg://"
-      color1.color="#000099ff"
+      color1.color="#383838"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/Telegram_logo.svg", tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false
@@ -544,7 +524,7 @@ Rectangle {
     onClicked: {
       tx1.text="Notes"
       tx2.text="evernote://"
-      color1.color="#ffff55"
+      color1.color="#fffb55"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/reminders.svg", tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false

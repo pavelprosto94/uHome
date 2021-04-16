@@ -3,6 +3,7 @@ import QtQuick 2.5
 import QtGraphicalEffects 1.0
 
 Item {
+    clip: true
     id: root
     anchors.fill : parent
     anchors.margins : units.gu(1)
@@ -29,6 +30,25 @@ function getinfClock() {
     root.minute = currentTime.getMinutes() * 6 + currentTime.getSeconds() * 0.1
     root.hour = currentTime.getHours() * 30 + currentTime.getMinutes() * 0.5
 }
+// Image{
+//     id: backsource
+//     anchors{
+//         top: parent.top
+//         topMargin: -root.parent.y
+//         left: parent.left 
+//         leftMargin: -root.parent.x
+//     }
+//     visible:false
+//     width: main.sizeWidth
+//     height: main.sizeHeight
+//     source: main.settings.background_source
+// }
+// FastBlur{
+//     anchors.fill : backsource
+//     source: backsource
+//     radius: units.gu(1)
+//     opacity: 0.8
+// }
 
 Rectangle{
     anchors.fill : parent
@@ -41,6 +61,13 @@ Rectangle{
     opacity: 0
     radius: units.gu(1.5)
 }
+// ThresholdMask{
+//     id: backsource_opacity
+//     anchors.fill: backsource
+//     source: backsource
+//     maskSource: background_source
+//     visible: false
+// }
 Image{
     id: arrow_source
     anchors.fill : parent

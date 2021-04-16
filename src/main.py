@@ -51,16 +51,39 @@ def updateWidget(indata):
   print(indata)
   pyotherside.send('updateWidget', indata)
 
-def getBackground():
-  text=""
-  f = open(CONFIGFILE, "r")
-  text=f.read()
-  key="Background="
-  text=text[text.rfind(key)+len(key):]
-  text=text[:text.find("\n")]
-  text="file://"+text
-  f.close()
-  return text
+# def getBackground():
+#   text=""
+#   f = open(CONFIGFILE, "r")
+#   text=f.read()
+#   key="Background="
+#   text=text[text.rfind(key)+len(key):]
+#   text=text[:text.find("\n")]
+#   text="file://"+text
+#   f.close()
+#   return text
+def getBackground(adr):
+  if adr=="":
+    adr="../src/Backgrounds/IMG_9137.jpg"
+  if "/var/lib/" in adr:
+    adr="../src/Backgrounds/IMG_9137.jpg"
+  if "/usr/share/" in adr:
+    adr="../src/Backgrounds/IMG_9137.jpg"  
+  if "../src" in adr:
+    adr=adr.replace("../src",  glob.SCRIPTPATH)
+  if "cache://" in adr:
+    adr=adr.replace("cache://",  glob.CACHEPATH)
+  return adr
+
+def getListFiles(path="",extension=""):
+  rez=[]
+  if "../src" in path:
+    path=path.replace("../src",  glob.SCRIPTPATH)
+  if os.path.exists(path):
+    for root, dirs, files in os.walk(path):
+        for filename in files:
+          if extension in filename:
+            rez.append(filename)
+  return rez
 
 def saveWidgets(txt):
   f = open(glob.CONFIGPATH+"/widgets.cnf", "w")
@@ -109,9 +132,15 @@ def createLink(txt=""):
 class WidgetsThread(Thread):
   def __init__(self):
     Thread.__init__(self)
+    self.background=""
       
   def run(self):
-    pyotherside.send('setBackground', [getBackground()])
+    pyotherside.send('setBackground', [getBackground(self.background)])
+    if not os.path.exists(glob.CONFIGPATH+"/widgets.cnf"):
+      f = open(glob.CONFIGPATH+"/widgets.cnf", "w")
+      strtxt = open(glob.SCRIPTPATH+'/widgets.cnf', 'r').read()
+      f.write(strtxt)
+      f.close()
     if os.path.exists(glob.CONFIGPATH+"/widgets.cnf"):
       f = open(glob.CONFIGPATH+"/widgets.cnf", "r")
       text=f.read()
@@ -160,10 +189,11 @@ class Widgets:
   def __init__(self):
     self.bgthread = threading.Thread()
 
-  def load(self):
+  def load(self, background=""):
     if self.bgthread.is_alive():
       return
     self.bgthread = WidgetsThread()
+    self.bgthread.background=background
     self.bgthread.start()
 
 widgets = Widgets()

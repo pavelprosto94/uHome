@@ -39,3 +39,10 @@ if not os.path.exists(CACHEPATH):
     except Exception as e:
         print("Can't create CACHEPATH dir:\n"+CACHEPATH)
         print(e)
+
+if not os.path.exists(CACHEPATH+"\Backgrounds"):
+    try:
+        os.makedirs(CACHEPATH+"\Backgrounds")
+    except Exception as e:
+        print("Can't create Backgrounds dir:\n"+CACHEPATH)
+        print(e)

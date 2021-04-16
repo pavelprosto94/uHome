@@ -71,8 +71,8 @@ DropShadow {
         verticalOffset: units.gu(0.2)
         radius: units.gu(0.3)
         samples: 9
-        color: "#AA000000"
-        source: sr1
+        color: "#88000000"
+        source: rect
     }
 DropShadow {
         anchors.fill: sr2

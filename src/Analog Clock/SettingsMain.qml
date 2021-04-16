@@ -137,10 +137,8 @@ Page {
           rightMargin: units.gu(2)
         }
 
-        Rectangle{
-          border.width: units.gu(0.2); 
-          border.color: theme.palette.normal.base
-          color: "transparent"
+        Checkerboard{
+          id: color1
           anchors{
             right: parent.right
             top: parent.top
@@ -149,22 +147,14 @@ Page {
             bottomMargin: -units.gu(0.5)
           }
           width: units.gu(5)
-          Checkerboard{
-            cellSide: units.gu(0.5)
-          }
-          Rectangle{
-            id: color1
-            anchors.fill: parent
-            border.width: units.gu(0.2); 
-            border.color: theme.palette.normal.base
             onColorChanged: {
               var newSet = [color.toString().toUpperCase(), widgetMain.handcolor, widgetMain.arrowsource, widgetMain.glasssource]
               widgetMain.settings=newSet
             }
-         }
           MouseArea{
             anchors.fill: parent
             onClicked:{
+              colorPicker.setColor=color1.color
               colorPicker.obj_target=color1
               colorPicker.visible=true
             }
@@ -184,10 +174,8 @@ Page {
           right: parent.right
           rightMargin: units.gu(2)
         }
-        Rectangle{
-          border.width: units.gu(0.2); 
-          border.color: theme.palette.normal.base
-          color: "transparent"
+        Checkerboard{
+          id: color2
           anchors{
             right: parent.right
             top: parent.top
@@ -196,22 +184,14 @@ Page {
             bottomMargin: -units.gu(0.5)
           }
           width: units.gu(5)
-          Checkerboard{
-            cellSide: units.gu(0.5)
-          }
-          Rectangle{
-            id: color2
-            anchors.fill: parent
-            border.width: units.gu(0.2); 
-            border.color: theme.palette.normal.base
             onColorChanged: {
               var newSet = [widgetMain.backgroundcolor, color.toString().toUpperCase(), widgetMain.arrowsource, widgetMain.glasssource]
               widgetMain.settings=newSet
             }
-         }
           MouseArea{
             anchors.fill: parent
             onClicked:{
+              colorPicker.setColor=color2.color
               colorPicker.obj_target=color2
               colorPicker.visible=true
             }
@@ -276,19 +256,10 @@ OpenButton{
         }
     }
 
-Python {
-        id: python
         Component.onCompleted: {
-            addImportPath(Qt.resolvedUrl('./'));
-            setHandler('error', function(returnValue) {
-                    myDialog.text = returnValue
-                    myDialog.visible = true;
-                });
-            importModule('settingsmain', function() {
-                console.log('module imported');
-                python.call('settingsmain.getBackgrounds', [], function(returnValue) {
+                python_main.call('main.getListFiles', ["../src/Analog Clock/background","."], function(returnValue) {
                     root.backgroundActions=returnValue
-                    python.call('settingsmain.getFronts', [], function(returnValue) {
+                    python_main.call('main.getListFiles', ["../src/Analog Clock/front","."], function(returnValue) {
                     root.frontActions=returnValue
                     var tmp=widgets.get(widgets.target_obj).snd
                     if (tmp.settings.length>0){
@@ -310,12 +281,5 @@ Python {
                         }
                   })
                 })
-            });
         }
-        onError: {
-            myDialog.text = 'python error: ' + traceback
-            myDialog.visible = true;
-            console.log('python error: ' + traceback);
-        }
-    }
 }
