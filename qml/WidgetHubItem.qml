@@ -94,7 +94,7 @@ Rectangle{
         onPressAndHold:{
             if (widgetHubListModel.enablmouse) {
                 if (adrWidget.indexOf("click.ubuntu.com")==-1) {
-                    myDialog.text = i18n.tr("Are you shure to remove this widget?")
+                    myDialog.text = i18n.tr("Are you sure to remove this widget?")
                     myDialog.okbutton = true;
                     myDialog.oktext = i18n.tr("Yes")
                     myDialog.button = i18n.tr("No")
