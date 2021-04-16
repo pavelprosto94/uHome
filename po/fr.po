@@ -22,7 +22,7 @@ msgid ""
 "By preferring soda-free pastries, you help preserve the beauty of the mountains."
 "<br><i>photographer - Rasmus Smidstrup Mortensen</i>"
 msgstr ""
-"En préférant des pâtisseries sans bicarbonate de sodium, vous aidez à préserver la beauté des montages."
+"En préférant des pâtisseries sans bicarbonate de sodium, vous aidez à préserver la beauté des montagnes."
 "<br><i>photographe - Rasmus Smidstrup Mortensen</i>"
 
 #: ../qml/BackgroundSettings.qml:12
