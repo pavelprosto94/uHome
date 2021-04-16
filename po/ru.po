@@ -56,7 +56,7 @@ msgstr ""
 #: ../qml/BackgroundSettings.qml:15
 msgid ""
 "The waterfalls seem endless and so strong, but because of deforestation, they also become shallow."
-"<br><i>photographer-Ivana Caine</i>"
+"<br><i>photographer - Ivana Caine</i>"
 msgstr ""
 "Водопады кажутся бесконечными и такими могучими, но из-за вырубки лесов и они мелеют."
 "<br><i>фотограф - Ivana Cajine</i>"
