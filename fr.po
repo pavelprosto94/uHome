@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: uhome.pavelprosto\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-09 18:26+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-04-16 17:34+0000\n"
+"Last-Translator: Keneda\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -22,8 +22,8 @@ msgid ""
 "By preferring soda-free pastries, you help preserve the beauty of the mountains."
 "<br><i>photographer - Rasmus Smidstrup Mortensen</i>"
 msgstr ""
-""
-""
+"En préférant des pâtisseries sans bicarbonate de sodium, vous aidez à préserver la beauté des montagnes."
+"<br><i>photographe - Rasmus Smidstrup Mortensen</i>"
 
 #: ../qml/BackgroundSettings.qml:12
 msgid ""
@@ -31,17 +31,17 @@ msgid ""
 "We choose a reusable alternative and admire its beauty."
 "<br><i>photographer - Amelia Barkland</i>"
 msgstr ""
-""
-""
-""
+"Environ 12 millions de tonnes de plastique finissent chaque année dans les océans."
+"Choisissons une alternative réutilisable et admirons sa beauté."
+"<br><i>photographe - Amelia Barkland</i>"
 
 #: ../qml/BackgroundSettings.qml:13
 msgid ""
 "An amazing fact, but away from the city smog, you can see the stars. And they are beautiful!"
 "<br><i>photographer - YAN CHEN</i>"
 msgstr ""
-""
-""
+"Un fait étonnant, mais loin du smog de la ville, on peut voir les étoiles. Et elles sont magnifiques !"
+"<br><i>photographe - YAN CHEN"
 
 #: ../qml/BackgroundSettings.qml:14
 msgid ""
@@ -49,17 +49,17 @@ msgid ""
 "It is terrible to imagine that such beauty can be blackened by oil."
 "<br><b>#StopOilSpills</b> <i>photographer - Julia Lapshina</i>"
 msgstr ""
-""
-""
-""
+"La blancheur de la neige ne peut qu'être enchanteresse."
+"Il est effrayant d'imaginer qu'une telle beauté puisse être noircie par le pétrole."
+"<br><b>#StopOilSpills</b> <i>photographe - Julia Lapshina</i>"
 
 #: ../qml/BackgroundSettings.qml:15
 msgid ""
 "The waterfalls seem endless and so strong, but because of deforestation, they also become shallow."
-"<br><i>photographer-Ivana Caine</i>"
+"<br><i>photographer - Ivana Caine</i>"
 msgstr ""
-""
-""
+"Les chutes d'eau semblent infinies et tellement puissantes, mais à cause de la déforestation, elles aussi s'amenuisent."
+"<br><i>photographe - Ivana Caine"
 
 #: ../qml/BackgroundSettings.qml:16
 msgid ""
@@ -67,9 +67,9 @@ msgid ""
 "This is when the snow-capped mountains cease to be so, and perhaps forever."
 "<br><i>photographer - Eberhard Grossgasteiger</i>"
 msgstr ""
-""
-""
-""
+"À quoi ressemble le réchauffement global ?"
+"C'est quand les montagnes enneigés cessent de l'être, probablement pour toujours."
+"<br><i>photographe - Eberhard Grossgasteiger"
 
 #: ../qml/BackgroundSettings.qml:19
 msgid "Background settings:"
@@ -77,19 +77,19 @@ msgstr "Paramètres d'arrière-plan:"
 
 #: ../qml/BackgroundSettings.qml:152
 msgid "Import user picture"
-msgstr ""
+msgstr "Importer une image perso"
 
 #: ../qml/BackgroundSettings.qml:169
 msgid "Export select background"
-msgstr ""
+msgstr "Exporter cet arrière-plan"
 
 #: ../qml/BackgroundSettings.qml:191
-msgid "Filed import file: "
-msgstr ""
+msgid "Failed import file: "
+msgstr "Échec d'importation du fichier :"
 
 #: ../qml/BackgroundSettings.qml:199
 msgid "Incorrect Image File"
-msgstr ""
+msgstr "Fichier image incorrect"
 
 #: ../qml/BackgroundSettings.qml:218 ../qml/MainSettings.qml:136
 msgid "Save"
@@ -101,11 +101,11 @@ msgstr "Annuler"
 
 #: ../qml/ExportPage.qml:33
 msgid "    Save file to:"
-msgstr ""
+msgstr "    Enregistrez le fichier dans :"
 
 #: ../qml/ImportPage.qml:29
 msgid "    Import file from:"
-msgstr "    Importer un fichier depuis:"
+msgstr "    Importer un fichier depuis :"
 
 #: ../qml/Main.qml:49
 msgid "en"
@@ -117,19 +117,19 @@ msgstr "Paramètres"
 
 #: ../qml/MainSettings.qml:34
 msgid "Programm theme:"
-msgstr ""
+msgstr "Thème du programme :"
 
 #: ../qml/MainSettings.qml:45
 msgid "System"
-msgstr ""
+msgstr "Système"
 
 #: ../qml/MainSettings.qml:79
 msgid "Background:"
-msgstr ""
+msgstr "Arrière-plan :"
 
 #: ../qml/MainSettings.qml:117
 msgid "Change"
-msgstr ""
+msgstr "Changer"
 
 #: ../qml/MenuPage.qml:109
 msgid "Add test widget"
@@ -160,8 +160,8 @@ msgid "Close"
 msgstr "Fermer"
 
 #: ../qml/WidgetArea.qml:143 ../qml/WidgetHubItem.qml:97
-msgid "Are you shure to remove this widget?"
-msgstr "Voulez-vous vraiment supprimer ce gadget?"
+msgid "Are you sure to remove this widget?"
+msgstr "Voulez-vous vraiment supprimer ce gadget ?"
 
 #: ../qml/WidgetArea.qml:145 ../qml/WidgetHubItem.qml:99
 msgid "Yes"
@@ -180,7 +180,7 @@ msgid ""
 "Press and hold the widget icon\n"
 "if you want to delete it."
 msgstr ""
-"Maintenez pressée l'icône du gadget\n"
+"Maintenez appuyée l'icône du gadget\n"
 "pour le supprimer."
 
 #: ../qml/WidgetHubItem.qml:104

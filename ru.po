@@ -56,7 +56,7 @@ msgstr ""
 #: ../qml/BackgroundSettings.qml:15
 msgid ""
 "The waterfalls seem endless and so strong, but because of deforestation, they also become shallow."
-"<br><i>photographer-Ivana Caine</i>"
+"<br><i>photographer - Ivana Caine</i>"
 msgstr ""
 "Водопады кажутся бесконечными и такими могучими, но из-за вырубки лесов и они мелеют."
 "<br><i>фотограф - Ivana Cajine</i>"
@@ -84,7 +84,7 @@ msgid "Export select background"
 msgstr "Экпортировать этот фон"
 
 #: ../qml/BackgroundSettings.qml:191
-msgid "Filed import file: "
+msgid "Failed import file: "
 msgstr "Ошибка импортирования файла: "
 
 #: ../qml/BackgroundSettings.qml:199
@@ -160,7 +160,7 @@ msgid "Close"
 msgstr "Закрыть"
 
 #: ../qml/WidgetArea.qml:143 ../qml/WidgetHubItem.qml:97
-msgid "Are you shure to remove this widget?"
+msgid "Are you sure to remove this widget?"
 msgstr "Вы уверены, что хотите удалить виджет?"
 
 #: ../qml/WidgetArea.qml:145 ../qml/WidgetHubItem.qml:99
