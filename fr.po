@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the uhome.pavelprosto package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: uhome.pavelprosto\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-09 18:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/BackgroundSettings.qml:11
+msgid ""
+"By preferring soda-free pastries, you help preserve the beauty of the mountains."
+"<br><i>photographer - Rasmus Smidstrup Mortensen</i>"
+msgstr ""
+""
+""
+
+#: ../qml/BackgroundSettings.qml:12
+msgid ""
+"About 12 million tons of plastic waste gets into the world's oceans every year. "
+"We choose a reusable alternative and admire its beauty."
+"<br><i>photographer - Amelia Barkland</i>"
+msgstr ""
+""
+""
+""
+
+#: ../qml/BackgroundSettings.qml:13
+msgid ""
+"An amazing fact, but away from the city smog, you can see the stars. And they are beautiful!"
+"<br><i>photographer - YAN CHEN</i>"
+msgstr ""
+""
+""
+
+#: ../qml/BackgroundSettings.qml:14
+msgid ""
+"Snow-white can't help but fascinate. "
+"It is terrible to imagine that such beauty can be blackened by oil."
+"<br><b>#StopOilSpills</b> <i>photographer - Julia Lapshina</i>"
+msgstr ""
+""
+""
+""
+
+#: ../qml/BackgroundSettings.qml:15
+msgid ""
+"The waterfalls seem endless and so strong, but because of deforestation, they also become shallow."
+"<br><i>photographer-Ivana Caine</i>"
+msgstr ""
+""
+""
+
+#: ../qml/BackgroundSettings.qml:16
+msgid ""
+"What does global warming look like? "
+"This is when the snow-capped mountains cease to be so, and perhaps forever."
+"<br><i>photographer - Eberhard Grossgasteiger</i>"
+msgstr ""
+""
+""
+""
+
+#: ../qml/BackgroundSettings.qml:19
+msgid "Background settings:"
+msgstr "Paramètres d'arrière-plan:"
+
+#: ../qml/BackgroundSettings.qml:152
+msgid "Import user picture"
+msgstr ""
+
+#: ../qml/BackgroundSettings.qml:169
+msgid "Export select background"
+msgstr ""
+
+#: ../qml/BackgroundSettings.qml:191
+msgid "Filed import file: "
+msgstr ""
+
+#: ../qml/BackgroundSettings.qml:199
+msgid "Incorrect Image File"
+msgstr ""
+
+#: ../qml/BackgroundSettings.qml:218 ../qml/MainSettings.qml:136
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ../qml/BackgroundSettings.qml:239 ../qml/MainSettings.qml:153
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../qml/ExportPage.qml:33
+msgid "    Save file to:"
+msgstr ""
+
+#: ../qml/ImportPage.qml:29
+msgid "    Import file from:"
+msgstr "    Importer un fichier depuis:"
+
+#: ../qml/Main.qml:49
+msgid "en"
+msgstr "fr"
+
+#: ../qml/MainSettings.qml:13 ../qml/MenuPage.qml:234
+msgid "Settings"
+msgstr "Paramètres"
+
+#: ../qml/MainSettings.qml:34
+msgid "Programm theme:"
+msgstr ""
+
+#: ../qml/MainSettings.qml:45
+msgid "System"
+msgstr ""
+
+#: ../qml/MainSettings.qml:79
+msgid "Background:"
+msgstr ""
+
+#: ../qml/MainSettings.qml:117
+msgid "Change"
+msgstr ""
+
+#: ../qml/MenuPage.qml:109
+msgid "Add test widget"
+msgstr "Ajouter un gadget en test"
+
+#: ../qml/MenuPage.qml:144
+msgid "Add widgets"
+msgstr "Ajouter des gadgets"
+
+#: ../qml/MenuPage.qml:171
+msgid "Edit home screen"
+msgstr "Éditer l'écran d’accueil"
+
+#: ../qml/MenuPage.qml:190
+msgid "Smart restart"
+msgstr "Redémarrage futé"
+
+#: ../qml/MenuPage.qml:219
+msgid "Donate"
+msgstr "Récompenser"
+
+#: ../qml/MyDialog.qml:12
+msgid "Ok"
+msgstr "Ok"
+
+#: ../qml/MyDialog.qml:54 ../qml/MyDialog.qml:63 ../qml/MyDialog.qml:80
+msgid "Close"
+msgstr "Fermer"
+
+#: ../qml/WidgetArea.qml:143 ../qml/WidgetHubItem.qml:97
+msgid "Are you shure to remove this widget?"
+msgstr "Voulez-vous vraiment supprimer ce gadget?"
+
+#: ../qml/WidgetArea.qml:145 ../qml/WidgetHubItem.qml:99
+msgid "Yes"
+msgstr "Oui"
+
+#: ../qml/WidgetArea.qml:146 ../qml/WidgetHubItem.qml:100
+msgid "No"
+msgstr "Non"
+
+#: ../qml/WidgetHub.qml:11
+msgid "    Add widget"
+msgstr "    Ajouter un gadget"
+
+#: ../qml/WidgetHub.qml:37
+msgid ""
+"Press and hold the widget icon\n"
+"if you want to delete it."
+msgstr ""
+"Maintenez pressée l'icône du gadget\n"
+"pour le supprimer."
+
+#: ../qml/WidgetHubItem.qml:104
+msgid "This widget cannot be deleted."
+msgstr "Suppression du gadgget impossible."
+
+#: uHome.desktop.in.h:1
+msgid "Home"
+msgstr "Accueil"
