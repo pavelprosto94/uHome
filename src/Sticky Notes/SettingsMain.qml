@@ -1,7 +1,6 @@
 import QtQuick 2.7
 import Ubuntu.Components 1.3
 import QtQuick.Layouts 1.3
-//import QtQuick.Controls.Styles 1.4
 import Ubuntu.Components.Themes 1.3
 import Ubuntu.Content 1.3
 

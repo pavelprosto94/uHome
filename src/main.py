@@ -13,7 +13,6 @@
  You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
-CONFIGFILE="/var/lib/AccountsService/users/phablet"
 import glob
 import os
 import threading
@@ -70,6 +69,9 @@ def getBackground(adr):
     adr="../src/Backgrounds/IMG_9137.jpg"  
   if "../src" in adr:
     adr=adr.replace("../src",  glob.SCRIPTPATH)
+  else:
+    if "/src/Backgrounds" in adr:
+      adr=glob.SCRIPTPATH+adr[adr.rfind("/Backgrounds"):]
   if "cache://" in adr:
     adr=adr.replace("cache://",  glob.CACHEPATH)
   return adr
@@ -138,8 +140,8 @@ class WidgetsThread(Thread):
     pyotherside.send('setBackground', [getBackground(self.background)])
     if not os.path.exists(glob.CONFIGPATH+"/widgets.cnf"):
       f = open(glob.CONFIGPATH+"/widgets.cnf", "w")
-      strtxt = open(glob.SCRIPTPATH+'/widgets.cnf', 'r').read()
-      f.write(strtxt)
+      strtxt = open(glob.SCRIPTPATH+'/datastart', 'r').read()
+      f.write(strtxt.replace("{path}",glob.SCRIPTPATH))
       f.close()
     if os.path.exists(glob.CONFIGPATH+"/widgets.cnf"):
       f = open(glob.CONFIGPATH+"/widgets.cnf", "r")
