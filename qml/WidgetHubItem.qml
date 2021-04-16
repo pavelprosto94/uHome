@@ -15,7 +15,7 @@ Rectangle{
     radius: units.gu(0.5)
     border{
         color: theme.palette.normal.base
-        width: units.gu(0.25)
+        width: units.gu(0.1)
     }
     Image{
         id: im1

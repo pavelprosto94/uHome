@@ -4,8 +4,49 @@ import Ubuntu.Components 1.3
 
 Rectangle {
     id: root
-    color: theme.palette.normal.background;
+    color: {if (height>units.gu(2)) {theme.palette.normal.background;}else{"transparent"}}
     property bool enablmouse: true;
+    signal commit
+    signal commitCompleted
+    signal collapse
+    signal collapseStarted
+    height: heightSize
+    property real heightSize:units.gu(1)
+
+    NumberAnimation on heightSize { 
+        id: showAnim
+        alwaysRunToEnd: true
+        running: false
+        to: units.gu(35); 
+        property bool enbl: false
+        onRunningChanged: {
+            if (!running) {
+                if(enbl) {
+                root.commitCompleted()
+                enbl = false
+            }}}
+        }
+    NumberAnimation on heightSize { 
+        id: hideAnim
+        alwaysRunToEnd: true
+        running: false
+        to: units.gu(1); 
+        property bool enbl: false
+        onRunningChanged: {
+            if (running) {
+                if(enbl) {
+                root.collapseStarted()
+                enbl = false
+            }}}
+        }
+    onCommit:{
+        showAnim.start()
+        showAnim.enbl=true
+    }
+    onCollapse:{
+        hideAnim.start()
+        hideAnim.enbl=true
+    }
 
 Rectangle {
     id: butHide
@@ -15,13 +56,13 @@ Rectangle {
     anchors{
         top: parent.top;
         topMargin: -units.gu(1.5);
-        left: parent.left;
-        right: parent.right;
+        horizontalCenter: parent.horizontalCenter
         }
+    width: {if (root.height>units.gu(2)) {parent.width}else{units.gu(5)}}
     Icon {
     width: parent.height
     height: parent.height
-    name: "down"
+    name: {if (root.height>units.gu(2)) {"down"} else {"up"}}
     anchors.centerIn: parent
     }
     Rectangle {
@@ -35,8 +76,26 @@ Rectangle {
     }
 MouseArea {
     anchors.fill: parent
-    visible: bottomEdge.mouseenbl
-    onClicked: {bottomEdge.collapse()}
+    onClicked: {
+        if (root.height>units.gu(2))
+        {
+            bottomEdge.collapse()
+        }else{
+            bottomEdge.commit()
+        }
+    }
+    onReleased: {
+        if (root.height<units.gu(2))
+        {
+            if (mouse.y<-units.gu(10)){
+            clicked(mouse)
+            }
+        }else{
+            if (mouse.y>units.gu(10)){
+            clicked(mouse)
+            }
+        }
+    }
 }
 }
 OpenButton{
@@ -119,6 +178,7 @@ OpenButton{
         }}}
     }
 OpenButton{
+        visible: false
         id: smartRestartBut
         anchors{
             left: parent.left
@@ -152,7 +212,7 @@ OpenButton{
             anchors{
             left: parent.left
             right: parent.right
-            top: smartRestartBut.bottom
+            top: chandeWidgetBut.bottom
             margins: units.gu(1)
             }
             iconName: "like"
@@ -162,6 +222,31 @@ OpenButton{
                 Qt.openUrlExternally("https://liberapay.com/pavelprosto/")
                 bottomEdge.collapse()
             }}
+    }
+    OpenButton{
+        id: settingsBut
+        anchors{
+            left: parent.left
+            right: parent.right
+            top: donateButton.bottom
+            margins: units.gu(1)
+        }
+        text: i18n.tr("Settings")
+        iconName: "settings"
+        onPressed: {
+        if (bottomEdge.mouseenbl) {
+            waitScreen.visible=true
+        }}
+        onClicked:{
+            if (bottomEdge.mouseenbl) {
+            waitScreen.visible=false
+            bottomEdge.collapse()
+            stack.push("MainSettings.qml")
+        }}
+        onReleased:{
+            if (bottomEdge.mouseenbl) {
+            waitScreen.visible=false
+        }}
     }
 }
 }

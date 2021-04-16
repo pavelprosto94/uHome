@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uhome.pavelprosto\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 03:16+0000\n"
+"POT-Creation-Date: 2021-04-16 19:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,9 +25,9 @@ msgstr ""
 
 #: ../qml/BackgroundSettings.qml:12
 msgid ""
-"About 12 million tons of plastic waste enters the world's oceans every year. "
-"We choose a reusable alternative and admire its beauty.<br><i>photographer - "
-"Amelia Barkland</i>"
+"About 12 million tons of plastic waste gets into the world's oceans every "
+"year. We choose a reusable alternative and admire its beauty."
+"<br><i>photographer - Amelia Barkland</i>"
 msgstr ""
 
 #: ../qml/BackgroundSettings.qml:13
@@ -46,7 +46,7 @@ msgstr ""
 #: ../qml/BackgroundSettings.qml:15
 msgid ""
 "The waterfalls seem endless and so strong, but because of deforestation, "
-"they also become shallow.<br><i>photographer-Ivana Caine</i>"
+"they also become shallow.<br><i>photographer - Ivana Caine</i>"
 msgstr ""
 
 #: ../qml/BackgroundSettings.qml:16
@@ -69,7 +69,7 @@ msgid "Export select background"
 msgstr ""
 
 #: ../qml/BackgroundSettings.qml:191
-msgid "Filed import file: "
+msgid "Failed import file: "
 msgstr ""
 
 #: ../qml/BackgroundSettings.qml:199
@@ -145,7 +145,7 @@ msgid "Close"
 msgstr ""
 
 #: ../qml/WidgetArea.qml:143 ../qml/WidgetHubItem.qml:97
-msgid "Are you shure to remove this widget?"
+msgid "Are you sure to remove this widget?"
 msgstr ""
 
 #: ../qml/WidgetArea.qml:145 ../qml/WidgetHubItem.qml:99

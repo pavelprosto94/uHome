@@ -23,6 +23,9 @@ import Ubuntu.Components.Themes 1.3
 import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
 
+import QtQuick.Controls.Suru 2.2
+import "./constants.js" as Constants
+
 MainView {
     id: main
     objectName: 'mainView'
@@ -32,17 +35,23 @@ MainView {
     property var activeTransfer
     property int xsize: {if (needrot==0) {Math.floor(width/units.gu(10))} else {Math.floor(height/units.gu(10))}}
     property int ysize: {if (needrot==0) {Math.floor(height/units.gu(10))} else {Math.floor(width/units.gu(10))}}
+    property real sizeWidth: width
+    property real sizeHeight: height
     width: units.gu(45)
     height: units.gu(75)
+    property alias settings: settings
+
     
     Component.onCompleted: {
     i18n.domain = "uhome.pavelprosto"
     }
 
     property string locale: i18n.tr("en")
+    property int activeTheme: parseInt(settings.theme)
     Settings {
     id: settings
     property string background_source: ""
+    property string theme: Constants.Theme.System
     }
 
 StackView {
@@ -300,13 +309,11 @@ StackView {
     }
     }
 
-    BottomEdge {
+    MenuPage {
     id: bottomEdge
-    height: units.gu(35)
-    hint.text: i18n.tr("Menu")   
-    contentComponent:  MenuPage{
-        width: main.width
-        height: bottomEdge.height
+    width: main.width
+    anchors{
+        bottom:parent.bottom
     }
     property bool mouseenbl : false
     onCommitCompleted:{
@@ -316,6 +323,8 @@ StackView {
         mouseenbl = false
     }
     }
+
+    
 
     Connections {
         id:widgetimport
@@ -364,7 +373,7 @@ StackView {
                     myDialog.visible = true;
                 });
             setHandler('setBackground', function(returnValue) {
-                    if (returnValue[0]!=settings.background_source) {
+                    if (returnValue[0]!=settings.background_source) {    
                         settings.background_source=returnValue[0]
                     }
                 });
@@ -389,7 +398,10 @@ StackView {
             });
             importModule('main', function() {
                 console.log('module imported');
-                python_main.call('main.widgets.load', [], function() {
+                python_main.call('main.widgets.load', [settings.background_source], function() {
+                    // if (settings.background_source==""){
+                    //     settings.background_source= "../src/Backgrounds/IMG_9137.jpg"
+                    // }
                     python_main.ready=true
                 })
             });
@@ -423,6 +435,10 @@ StackView {
     id: importPage
     visible: false
     }
+    ExportPage {
+    id: exportPage
+    visible: false
+    }
     MyDialog {
         id: myDialog
         visible: false
@@ -448,6 +464,27 @@ StackView {
         }}}
     }
     }
+
+function setCurrentTheme() {
+    switch (activeTheme) {
+      case Constants.Theme.System:
+        theme.name = "";
+        Suru.theme = undefined;
+        break;
+      case Constants.Theme.SuruLight:
+        theme.name = "Ubuntu.Components.Themes.Ambiance";
+        Suru.theme = Suru.Light;
+        break;
+      case Constants.Theme.SuruDark:
+        theme.name = "Ubuntu.Components.Themes.SuruDark";
+        Suru.theme = Suru.Dark;
+        break;
+    }
+  }
+
+  onActiveThemeChanged: {
+  setCurrentTheme()
+  }
 //     ListView {
 //     anchors.fill: parent; 
 //     model: Qt.fontFamilies()
