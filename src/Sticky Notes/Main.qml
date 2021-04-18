@@ -9,7 +9,7 @@ Item {
     anchors.margins : units.gu(1)
     property var settings: ["yellow.png", "Simple Notes😗", "2", "Pecita"]
     property string backgroundsource: "yellow.png"
-    property string textnote: "Simple Notes😗"
+    property string textnote: i18n.tr("Simple Notes😗")
     property real fontsize: units.gu(2)
     property string fontName: "Pecita"
     property bool visibleText: true
