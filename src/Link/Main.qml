@@ -11,7 +11,7 @@ Item {
     property string backgroundcolor: "#FF0E8CBA"
     property string iconsource: "img/morph-browser.svg"
     property string linkUrl: "https://liberapay.com/pavelprosto"
-    property string linktext: "Internet Link"
+    property string linktext: i18n.tr("Internet Link")
     property string linkcolor: "#FFFFFFFF"
     onSettingsChanged:{
         if (settings.length>0) backgroundcolor=settings[0]
