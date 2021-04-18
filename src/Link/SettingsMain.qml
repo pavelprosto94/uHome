@@ -9,7 +9,7 @@ Page {
         id:root
         header: PageHeader {
             id: header
-            title: "Edit Link"
+            title: i18n.tr("Edit Link")
         }
     
     Rectangle{
@@ -66,7 +66,7 @@ Page {
     
     Text {
         id: label1
-        text: "Link name:"
+        text: i18n.tr("Link name:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -97,7 +97,7 @@ Page {
   }
   Text {
         id: label2
-        text: "Link URL:"
+        text: i18n.tr("Link URL:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -128,7 +128,7 @@ Page {
   }
   Text {
         id: label3
-        text: "To test the link, you can click on the prototype widget at the top of the screen."
+        text: i18n.tr("To test the link, you can click on the prototype widget at the top of the screen.")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(1)
         anchors{
@@ -152,14 +152,14 @@ Page {
   }
   iconOffset: true
   iconName: "import"
-  text: "Import a picture for icon"
+  text: i18n.tr("Import a picture for icon")
     onClicked: {
         stack.push(importPage)
     }
   }
   Text {
         id: label4
-        text: "BackgroundColor:"
+        text: i18n.tr("BackgroundColor:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -197,7 +197,7 @@ Page {
     } 
     Text {
         id: label5
-        text: "LinkColor:"
+        text: i18n.tr("LinkColor:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -244,7 +244,7 @@ Page {
   width: units.gu(16)
   iconOffset: true
   iconName: "image-quality"
-  text: "Sketch"
+  text: i18n.tr("Sketch")
     onClicked: {
       sketchlayer.visible=true
     }
@@ -265,7 +265,7 @@ Page {
   colorButText: "white"
   iconOffset: true
   iconName: "document-save"
-  text: "Save"
+  text: i18n.tr("Save")
     onPressed: {
         waitScreen.visible=true
     }
@@ -315,7 +315,7 @@ OpenButton{
   width: units.gu(16)
   iconOffset: true
   iconName: "close"
-  text: "Cancel"
+  text: i18n.tr("Cancel")
     onClicked: {
       stack.pop()
     }
@@ -351,7 +351,7 @@ OpenButton{
               var newSet = [widgetMain.backgroundcolor, tx1.text, widgetMain.linkcolor, fileUrl, tx2.text]
               widgetMain.settings=newSet
             } else {
-              myDialog.text="Incorrect Image File"
+              myDialog.text=i18n.tr("Incorrect Image File")
               myDialog.visible=true
               importPage.activeConTransfer.finalize()
             }
@@ -388,9 +388,9 @@ Rectangle {
   }
   iconOffset: true
   iconSource: "img/terminal-app.svg"
-  text: "Terminal"
+  text: i18n.tr("Terminal")
     onClicked: {
-      tx1.text="Terminal"
+      tx1.text=i18n.tr("Terminal")
       tx2.text="terminal://"
       color1.color="#383838"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/terminal-app.svg", tx2.text]
@@ -410,9 +410,9 @@ Rectangle {
   }
   iconOffset: true
   iconSource: "img/assets_calendar-app.png"
-  text: "Calendar"
+  text: i18n.tr("Calendar")
     onClicked: {
-      tx1.text="Calendar"
+      tx1.text=i18n.tr("Calendar")
       tx2.text="calendar://"
       color1.color="#383838"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/assets_calendar-app.png", tx2.text]
@@ -432,9 +432,9 @@ Rectangle {
   }
   iconOffset: true
   iconSource: "img/desktop_gallery-app.svg"
-  text: "Gallery"
+  text: i18n.tr("Gallery")
     onClicked: {
-      tx1.text="Gallery"
+      tx1.text=i18n.tr("Gallery")
       tx2.text="photo://"
       color1.color="#006ce3"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/desktop_gallery-app.svg", tx2.text]
@@ -454,9 +454,9 @@ Rectangle {
   }
   iconOffset: true
   iconSource: "img/app_weather-app.svg"
-  text: "Weather"
+  text: i18n.tr("Weather")
     onClicked: {
-      tx1.text="Weather"
+      tx1.text=i18n.tr("Weather")
       tx2.text="weather://"
       color1.color="#006ce3"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/app_weather-app.svg", tx2.text]
@@ -476,9 +476,9 @@ Rectangle {
   }
   iconOffset: true
   iconSource: "img/app_graphics_music-app.svg"
-  text: "Music"
+  text: i18n.tr("Music")
     onClicked: {
-      tx1.text="Music"
+      tx1.text=i18n.tr("Music")
       tx2.text="music://"
       color1.color="#ff1c47"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/app_graphics_music-app.svg", tx2.text]
@@ -498,9 +498,9 @@ Rectangle {
   }
   iconOffset: true
   iconSource: "img/Telegram_logo.svg"
-  text: "Telegram"
+  text: i18n.tr("Telegram")
     onClicked: {
-      tx1.text="Telegram"
+      tx1.text=i18n.tr("Telegram")
       tx2.text="tg://"
       color1.color="#383838"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/Telegram_logo.svg", tx2.text]
@@ -520,9 +520,9 @@ Rectangle {
   }
   iconOffset: true
   iconSource: "img/reminders.svg"
-  text: "Notes"
+  text: i18n.tr("Notes")
     onClicked: {
-      tx1.text="Notes"
+      tx1.text=i18n.tr("Notes")
       tx2.text="evernote://"
       color1.color="#fffb55"
       var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/reminders.svg", tx2.text]
@@ -540,7 +540,7 @@ Rectangle {
   width: units.gu(16)
   iconOffset: true
   iconName: "close"
-  text: "Cancel"
+  text: i18n.tr("Cancel")
     onClicked: {
       sketchlayer.visible=false
     }
