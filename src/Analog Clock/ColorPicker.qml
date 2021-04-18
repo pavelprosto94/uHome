@@ -167,7 +167,7 @@ Rectangle{
         width: units.gu(12)
         iconOffset: true
         iconName: "ok"
-        text: "Apply"
+        text: i18n.tr("Apply")
             onClicked: {
             root.visible=false
             confirm()
@@ -185,7 +185,7 @@ Rectangle{
         width: units.gu(12)
         iconOffset: true
         iconName: "close"
-        text: "Cancel"
+        text: i18n.tr("Cancel")
             onClicked: {
             root.visible=false
             root.setColor= "#00000000"
