@@ -8,7 +8,7 @@ Page {
         id:root
         header: PageHeader {
             id: header
-            title: "Settings"
+            title: i18n.tr("Settings")
         }
         property var backgroundActions: []
         property var frontActions: []
@@ -67,7 +67,7 @@ Page {
     
     Text {
         id: label1
-        text: "Background:"
+        text: i18n.tr("Background:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -96,7 +96,7 @@ Page {
       }
     Text {
         id: label2
-        text: "Front:"
+        text: i18n.tr("Front:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -125,7 +125,7 @@ Page {
       }
     Text {
         id: label3
-        text: "BackgroundColor:"
+        text: i18n.tr("BackgroundColor:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -163,7 +163,7 @@ Page {
     } 
     Text {
         id: label4
-        text: "HandColor:"
+        text: i18n.tr("HandColor:")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -214,7 +214,7 @@ Page {
   colorButText: "white"
   iconOffset: true
   iconName: "document-save"
-  text: "Save"
+  text: i18n.tr("Save")
     onPressed: {
         waitScreen.visible=true
     }
@@ -238,7 +238,7 @@ OpenButton{
   width: units.gu(16)
   iconOffset: true
   iconName: "close"
-  text: "Cancel"
+  text: i18n.tr("Cancel")
     onClicked: {
       stack.pop()
     }
