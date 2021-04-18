@@ -8,7 +8,7 @@ Page {
         id:root
         header: PageHeader {
             id: header
-            title: "Edit note:"
+            title: i18n.tr("Edit note:")
         }
         property var backgroundActions: ["red.png", "orange.png", "yellow.png", "green.png", "blue.png", "purple.png", "pink.png", "white.png"]
         property var backgroundToColor: ["#fbd5ce", "#fde5cf",    "#fff4bc",    "#d1ecc6",   "#d3f5fc",  "#ccd9fc",    "#f5d4fd",  "#ffffff"]
@@ -104,7 +104,7 @@ Page {
 
    Text {
         id: label1
-        text: "To edit the text of the note, click on an area in the widget."
+        text: i18n.tr("To edit the text of the note, click on an area in the widget.")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(1)
         anchors{
@@ -158,7 +158,7 @@ Page {
       }
       Text {
         id: label2
-        text: "Font size: "
+        text: i18n.tr("Font size: ")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -190,7 +190,7 @@ Page {
     }
     Text {
         id: label3
-        text: "Font style: "
+        text: i18n.tr("Font style: ")
         color: theme.palette.normal.backgroundText
         font.pixelSize: units.gu(2)
         anchors{
@@ -233,7 +233,7 @@ Page {
   colorButText: "white"
   iconOffset: true
   iconName: "document-save"
-  text: "Save"
+  text: i18n.tr("Save")
     onPressed: {
         waitScreen.visible=true
     }
@@ -257,7 +257,7 @@ Page {
   width: units.gu(16)
   iconOffset: true
   iconName: "close"
-  text: "Cancel"
+  text: i18n.tr("Cancel")
     onClicked: {
       stack.pop()
     }
