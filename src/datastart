@@ -1,0 +1,18 @@
+file://{path}/Analog Clock/Main.qml
+x:5
+y:5
+w:30
+h:30
+settings:#42FFFFFF|#FFFFFF|Ubuntu.svg|None.svg|
+file://{path}/Link/Main.qml
+x:5
+y:65
+w:10
+h:10
+settings:#000099FF|Telegram|#FFFFFFFF|img/Telegram_logo.svg|tg://|
+file://{path}/Link/Main.qml
+x:0
+y:55
+w:10
+h:10
+settings:#A71503|YouTube|#FFFFFFFF|img/play.svg|https://youtube.com|

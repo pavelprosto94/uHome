@@ -1,0 +1,17 @@
+{
+    "name": "uhome.pavelprosto",
+    "description": "Home screen for Ubuntu Touch",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Home",
+    "hooks": {
+        "uHome": {
+            "apparmor": "uHome.apparmor",
+            "desktop":  "uHome.desktop",
+            "urls": "src/urls-dispatcher.json",
+            "content-hub": "src/content-hub.json"
+        }
+    },
+    "version": "0.8.3",
+    "maintainer": "Pavel Prosto <pavelprosto94@gmail.com>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg style="enable-background:new" xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 512 512" width="512" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" y2="494" gradientUnits="userSpaceOnUse" x2="512" y1="18">
+   <stop style="stop-color:#ffea73" offset="0"/>
+   <stop style="stop-color:#fef4bd" offset="1"/>
+  </linearGradient>
+ </defs>
+ <path style="color:#000000;enable-background:accumulate;fill:url(#a)" d="m0 0v183.9 144.2 183.9h512v-183.9-144.2-183.9h-512z"/>
+ <path style="opacity:.1;color:#000000;fill-opacity:.9961;enable-background:accumulate;fill:#5c81df" d="m0 231v2h512.4v-2z"/>
+ <path style="opacity:.1;color:#000000;fill-opacity:.9961;enable-background:accumulate;fill:#5c81df" d="m0 279v2h512.4v-2z"/>
+ <path style="opacity:.1;color:#000000;fill-opacity:.9961;enable-background:accumulate;fill:#5c81df" d="m0 375v2h512.4v-2z"/>
+ <rect style="opacity:.3;color:#000000;fill-opacity:.9961;enable-background:accumulate;fill:#ef5145" height="494" width="2" y="18" x="86.75"/>
+ <path style="color:#000000;enable-background:accumulate;fill:#fad81f" d="m0 0.0000012h512v120h-512z"/>
+ <path style="opacity:.4;color:#000000;enable-background:accumulate;fill:#fac82e" d="m8 126c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm16 0c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z"/>
+ <path d="m0 183v2h512.4v-2z" style="opacity:.1;color:#000000;fill-opacity:.9961;enable-background:accumulate;fill:#5c81df"/>
+ <path d="m0 423v2h512.4v-2z" style="opacity:.1;color:#000000;fill-opacity:.9961;enable-background:accumulate;fill:#5c81df"/>
+ <path d="m0 327v2h512.4v-2z" style="opacity:.1;color:#000000;fill-opacity:.9961;enable-background:accumulate;fill:#5c81df"/>
+ <path style="color:#000000;enable-background:accumulate;fill:#4969ba" d="m120 176v16h272v-16zm0 48v16h272v-16zm0 48v16h272v-16zm0 48v16h136.2v-16z"/>
+ <path style="opacity:.3;color:#000000;enable-background:accumulate;fill:#fff" d="m512 315-199.8 197h199.8z"/>
+ <path d="m219.3 124-35.19 71.66v59.25c-4.94 5.788-10.34 11.62-15.97 17.25-18.5 18.5-39.25 34.69-53.12 39.31l-23.34-23.5-71.66 35.2v170.7h256v-317.6c-15.4-33.4-32.4-45.9-56.7-52.4zm-97.5 229c0.007-0.005 0.0239 0.005 0.0312 0-2.611 1.63-5.251 3.227-7.906 4.812 2.656-1.586 5.264-3.182 7.875-4.812zm-24.09 14.06c0.008-0.004 0.0234 0.004 0.0312 0-2.742 1.499-5.529 2.981-8.312 4.438 2.784-1.457 5.539-2.939 8.281-4.438z" style="opacity:.05;fill-opacity:0;color:#000000;enable-background:accumulate"/>
+</svg>
