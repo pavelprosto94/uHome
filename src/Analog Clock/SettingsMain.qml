@@ -248,9 +248,6 @@ OpenButton{
         id: colorPicker
         property var obj_target
         visible: false
-        anchors.centerIn: parent
-        width: {if (parent.width>parent.height){parent.height-units.gu(2)}else{parent.width-units.gu(2)}}
-        height: width
         onConfirm:{
           obj_target.color=colorValue
         }

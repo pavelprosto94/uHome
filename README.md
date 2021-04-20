@@ -103,6 +103,7 @@ You can get a list of files for your widget using the already created function:
     }
 
 **Import files**
+
 If your widget needs to add files from the user, you can use the importPage component:
 
     Connections {
@@ -123,6 +124,33 @@ Don't forget to move the added files to the app cache. After the phone restarts,
     }
 
 [See example](https://github.com/pavelprosto94/uHome/blob/master/src/Link/SettingsMain.qml#L273)
+
+**ColorPicker Dialog**
+
+If your widget needs to change the color of a component, you can use the ColorPicker. It is an open source project, so you can use this component in any of your programs.
+
+Copy the **ColorPicker.qml** (Color Picker Dialog) and **Checkerboard.qml** (Color Sketch) files to your directory.
+
+Add component to code:
+
+    ColorPicker{
+        id: colorPicker
+        property var obj_target
+        visible: false
+        onConfirm:{
+          obj_target.color=colorValue
+        }
+    }
+
+You can assign a source color using **.setColor** and extract the selected color using the **.color** property:
+
+    onClicked:{
+              colorPicker.setColor=color2.color
+              colorPicker.obj_target=color2
+              colorPicker.visible=true
+            }
+
+[See example](https://github.com/pavelprosto94/uHome/blob/master/src/Analog%20Clock/SettingsMain.qml#L140)
 
 ## Build
 In the terminal, go to our directory with the project and enter the command:
