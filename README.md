@@ -51,10 +51,10 @@ If you would like to add your application to the home screen using the URLDispat
 
   **icon** You can set icon for standard path "img/{iconname}.svg", or set the icon in BASE64 format
 
-### Secondary functions
+
 In creating a widget, you can use the standard functions of the application
 
-**Settings**
+### Settings widget
 Each widget can contain an array with *"settings"*. It is important to remember that each setting is saved to a text document. Don't forget to transform parameters to String(*.toString()*) format if necessary.
 
 You can apply these settings using the onSettingsChanged function
@@ -67,6 +67,29 @@ You can apply these settings using the onSettingsChanged function
     }
 
 [See example](https://github.com/pavelprosto94/uHome/blob/master/src/Analog%20Clock/Main.qml)
+
+### Secondary functions
+**Dialog**
+
+If you need to display a message, use myDialog:
+
+    myDialog.text=i18n.tr("Failed import file: "+namefile)
+    myDialog.visible=true
+
+If you need user confirmation action, use Connect to myDialog:
+
+    Connections {
+            enabled: removebut.enblcon
+            target: myDialog
+            onClicked: { 
+            removebut.enblcon=false
+            *{your code there}*
+            });
+            }
+        }
+    
+**Dialog**    
+
 
 ## Build
 In the terminal, go to our directory with the project and enter the command:
