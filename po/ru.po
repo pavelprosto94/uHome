@@ -75,27 +75,41 @@ msgstr ""
 msgid "Background settings:"
 msgstr "Настройки фонового изображения:"
 
-#: ../qml/BackgroundSettings.qml:152
+#: ../qml/BackgroundSettings.qml:173
+msgid "Are you sure to remove this Background?"
+msgstr "Вы уверены, что хотите удалить это фоновое изображение"
+
+#: ../qml/BackgroundSettings.qml:175 ../qml/WidgetArea.qml:145
+#: ../qml/WidgetHubItem.qml:99
+msgid "Yes"
+msgstr "Да"
+
+#: ../qml/BackgroundSettings.qml:176 ../qml/WidgetArea.qml:146
+#: ../qml/WidgetHubItem.qml:100
+msgid "No"
+msgstr "Нет"
+
+#: ../qml/BackgroundSettings.qml:201
 msgid "Import user picture"
 msgstr "Добавить изображение"
 
-#: ../qml/BackgroundSettings.qml:169
+#: ../qml/BackgroundSettings.qml:218
 msgid "Export select background"
 msgstr "Экпортировать этот фон"
 
-#: ../qml/BackgroundSettings.qml:191
+#: ../qml/BackgroundSettings.qml:240
 msgid "Failed import file: "
 msgstr "Ошибка импортирования файла: "
 
-#: ../qml/BackgroundSettings.qml:199
+#: ../qml/BackgroundSettings.qml:248
 msgid "Incorrect Image File"
 msgstr "Данное изображение некорректно"
 
-#: ../qml/BackgroundSettings.qml:218 ../qml/MainSettings.qml:136
+#: ../qml/BackgroundSettings.qml:267 ../qml/MainSettings.qml:136
 msgid "Save"
 msgstr "Сохранить"
 
-#: ../qml/BackgroundSettings.qml:239 ../qml/MainSettings.qml:153
+#: ../qml/BackgroundSettings.qml:288 ../qml/MainSettings.qml:153
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -162,14 +176,6 @@ msgstr "Закрыть"
 #: ../qml/WidgetArea.qml:143 ../qml/WidgetHubItem.qml:97
 msgid "Are you sure to remove this widget?"
 msgstr "Вы уверены, что хотите удалить виджет?"
-
-#: ../qml/WidgetArea.qml:145 ../qml/WidgetHubItem.qml:99
-msgid "Yes"
-msgstr "Да"
-
-#: ../qml/WidgetArea.qml:146 ../qml/WidgetHubItem.qml:100
-msgid "No"
-msgstr "Нет"
 
 #: ../qml/WidgetHub.qml:11
 msgid "    Add widget"
