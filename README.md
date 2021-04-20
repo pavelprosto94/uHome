@@ -35,10 +35,10 @@ If you would like to add your application to the home screen using the URLDispat
       Qt.openUrlExternally("uhome://createlink/?name=VideoPlayer&url=uvideo://&backgroundcolor=#00000000&icon=img/uVideo.svg")
     }
 
-**name** link name
-**url** if your program support URLDispatcher paste link there
-**backgroundcolor** color in ARGB(alpha, red, green, blue) format. If the icon does not have a transparent background, then this parameter will not be visible
-**icon** You can set icon for standard path "img/{iconname}.svg", or set the icon in BASE64 format
+  **name** link name
+  **url** if your program support URLDispatcher paste link there
+  **backgroundcolor** color in ARGB(alpha, red, green, blue) format. If the icon does not have a transparent background, then this parameter will not be visible
+  **icon** You can set icon for standard path "img/{iconname}.svg", or set the icon in BASE64 format
 
 
 
