@@ -28,6 +28,20 @@ Custom widgets are located at:
 
 You can create your own widgets using **QML** and **PyOtherSide**. See examples of [standard widgets](https://github.com/pavelprosto94/uHome/tree/main/src) and example of [weather widget](https://github.com/pavelprosto94/openweatermapwidget).
 
+### Create link for your programm
+If you would like to add your application to the home screen using the URLDispatcher
+
+    onClicked: {
+      Qt.openUrlExternally("uhome://createlink/?name=VideoPlayer&url=uvideo://&backgroundcolor=#00000000&icon=img/uVideo.svg")
+    }
+
+**name** link name
+**url** if your program support URLDispatcher paste link there
+**backgroundcolor** color in ARGB(alpha, red, green, blue) format. If the icon does not have a transparent background, then this parameter will not be visible
+**icon** You can set icon for standard path "img/{iconname}.svg", or set the icon in BASE64 format
+
+
+
 ## Build
 In the terminal, go to our directory with the project and enter the command:
     
