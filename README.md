@@ -49,7 +49,7 @@ If you would like to add your application to the home screen using the URLDispat
 
   **backgroundcolor** color in ARGB(alpha, red, green, blue) format. If the icon does not have a transparent background, then this parameter will not be visible
 
-  **icon** You can set icon for standard path "img/{iconname}.svg", or set the icon in BASE64 format
+  **icon** You can set icon for standard path ["img/{iconname}.svg"](https://github.com/pavelprosto94/uHome/tree/master/src/Link/img), or set the icon in BASE64 format
 
 
 In creating a widget, you can use the standard functions of the application
