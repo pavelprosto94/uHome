@@ -78,17 +78,30 @@ If you need to display a message, use myDialog:
 
 If you need user confirmation action, use Connect to myDialog:
 
+    property bool enblcon: false
     Connections {
-            enabled: removebut.enblcon
+            enabled: parent.enblcon
             target: myDialog
             onClicked: { 
-            removebut.enblcon=false
+            parent.enblcon=false
             *{your code there}*
             });
             }
         }
     
-**Dialog**    
+**ListFiles**    
+You can get a list of files for your widget using the already created function:
+
+    python_main.call('main.getListFiles', ["{path}","{extension}"], function (returnValue) {
+        *{your code there}*
+    }
+
+**Fileexists**
+
+    python_main.call('main.fileexists', ["{path}"], function(returnValue) {
+        *{your code there}*
+    }
+
 
 
 ## Build
