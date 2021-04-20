@@ -102,7 +102,27 @@ You can get a list of files for your widget using the already created function:
         *{your code there}*
     }
 
+**Import files**
+If your widget needs to add files from the user, you can use the importPage component:
 
+    Connections {
+        enabled: parent.visible
+        target: importPage
+        onImported: { 
+            *{your code there}*
+        }
+    }
+
+Don't forget to move the added files to the app cache. After the phone restarts, ContentHub closes all connections.
+
+    if (importPage.activeTransfer.items[0].move("/home/phablet/.cache/uhome.pavelprosto/")==false) {
+        *{show error}*
+    } else {
+        importPage.activeTransfer.finalize()
+        *{your code there}*
+    }
+
+[See example](https://github.com/pavelprosto94/uHome/blob/master/src/Link/SettingsMain.qml#L273)
 
 ## Build
 In the terminal, go to our directory with the project and enter the command:
