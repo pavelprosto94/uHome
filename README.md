@@ -28,6 +28,14 @@ Custom widgets are located at:
 
 You can create your own widgets using **QML** and **PyOtherSide**. See examples of [standard widgets](https://github.com/pavelprosto94/uHome/tree/main/src) and example of [weather widget](https://github.com/pavelprosto94/openweatermapwidget).
 
+**Each widget is a folder with its name, consisting of:**
+
+**Main.qml** is the body of the widget (required)
+
+**SettingsMain.qml** If your application needs additional settings, you can create this page
+
+**thumbnail.jpg** A thumbnail of your widget in the widget browser
+
 ### Create link for your programm
 If you would like to add your application to the home screen using the URLDispatcher
 
@@ -40,10 +48,25 @@ If you would like to add your application to the home screen using the URLDispat
   **url** if your program support URLDispatcher paste link there
 
   **backgroundcolor** color in ARGB(alpha, red, green, blue) format. If the icon does not have a transparent background, then this parameter will not be visible
-  
+
   **icon** You can set icon for standard path "img/{iconname}.svg", or set the icon in BASE64 format
 
+### Secondary functions
+In creating a widget, you can use the standard functions of the application
 
+**Settings**
+Each widget can contain an array with *"settings"*. It is important to remember that each setting is saved to a text document. Don't forget to transform parameters to String(*.toString()*) format if necessary.
+
+You can apply these settings using the onSettingsChanged function
+
+    onSettingsChanged:{
+        if (settings.length>0) backgroundcolor=settings[0]
+        if (settings.length>1) handcolor=settings[1]
+        if (settings.length>2) arrowsource=settings[2]
+        if (settings.length>3) glasssource=settings[3]
+    }
+
+[See example](https://github.com/pavelprosto94/uHome/blob/master/src/Analog%20Clock/Main.qml)
 
 ## Build
 In the terminal, go to our directory with the project and enter the command:
