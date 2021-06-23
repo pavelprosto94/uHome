@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.3
 import Ubuntu.Components.Themes 1.3
 import io.thp.pyotherside 1.3
 import Ubuntu.Content 1.3
+import QtGraphicalEffects 1.0
 
 Page {
         id:root
@@ -330,6 +331,7 @@ OpenButton{
         height: width
         onConfirm:{
           obj_target.color=colorValue
+          console.log(colorValue)
         }
     }
 
@@ -361,6 +363,77 @@ Item {
     id: sketchlayer
     visible: false
     anchors.fill:parent
+
+    property var sketch_icons : [ 
+      "img/play.svg",
+      "img/ubports.png",
+      "img/terminal-app.svg",
+      "img/assets_calendar-app.png",
+      "img/address-book-app.png",
+      "img/dialer-app.png",
+      "img/messaging-app.png",
+      "img/user.svg",
+      "img/desktop_gallery-app.svg",
+      "img/app_weather-app.svg",
+      "img/app_graphics_music-app.svg",
+      "img/reminders.svg",
+      "img/Telegram_logo.svg",
+      "img/dekko-app.png",
+      "img/docviewer-app.png"
+    ];
+    property var sketch_tille : [
+      "YouTube",
+      "Forum",
+      "Terminal",
+      "Calendar",
+      "Addressbook",
+      "Telephone",
+      "Messages",
+      "Contact",
+      "Gallery",
+      "Weather",
+      "Music",
+      "Notes",
+      "Telegram",
+      "Dekko",
+      "Documents"
+    ]; 
+    property var sketch_link : [
+      "https://youtube.com",
+      "https://forums.ubports.com/",
+      "terminal://",
+      "calendar://",
+      "addressbook://",
+      "dialer://",
+      "message://",
+      "tel://0.123456789",
+      "photo://",
+      "weather://",
+      "music://",
+      "evernote://",
+      "tg://",
+      "dekko://",
+      "document://"
+    ]
+    property var sketch_color : [
+      "#e32200",
+      "#ffffff",
+      "#383838",
+      "#383838",
+      "#383838",
+      "#383838",
+      "#383838",
+      "#ff9c1c",
+      "#006ce3",
+      "#006ce3",
+      "#ff1c47",
+      "#fffb55",
+      "#383838",
+      "#d7efed",
+      "#d7efed"
+    ]
+
+
 Rectangle {
     anchors.fill:parent
     color: theme.palette.normal.background
@@ -368,169 +441,93 @@ Rectangle {
 }
 Rectangle {
     anchors.centerIn:parent
-    width: units.gu(30)
-    height: {childrenRect.height+units.gu(8.5)}
+    width: units.gu(32)
+    height: units.gu(42)
     color: theme.palette.normal.background
     border{
         color: theme.palette.normal.base
         width: units.gu(0.1)
         }
    radius: units.gu(1)
-  OpenButton{
-    id: sketch1
-  anchors{
-    left: parent.left
-    leftMargin: units.gu(2)
-    right: parent.right
-    rightMargin: units.gu(2)
-    top: parent.top
-    topMargin: units.gu(1)
-  }
-  iconOffset: true
-  iconSource: "img/terminal-app.svg"
-  text: "Terminal"
-    onClicked: {
-      tx1.text="Terminal"
-      tx2.text="terminal://"
-      color1.color="#383838"
-      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/terminal-app.svg", tx2.text]
+
+  GridView{
+    id: grid
+    anchors{
+      top: parent.top
+      left: parent.left
+      right: parent.right
+      bottom: sketch_close.top
+      margins: units.gu(1)
+    }
+    clip: true
+    cellWidth: units.gu(10); 
+    cellHeight: units.gu(10); 
+    model: sketchlayer.sketch_link
+    delegate: Item {
+    width: grid.cellWidth; 
+    height: grid.cellHeight;
+    Rectangle{
+      id: rect;
+      anchors{
+        horizontalCenter: parent.horizontalCenter
+        top: parent.top
+        topMargin: units.gu(1)
+      } 
+      width: units.gu(6)
+      height: units.gu(6)
+      color: sketchlayer.sketch_color[index]
+      radius: units.gu(1.5)
+
+Rectangle{
+    id: background_source
+    anchors.fill: parent
+    opacity: 0
+    radius: units.gu(1.5)
+}
+Image{
+    id: ico_source
+    anchors.fill: parent
+    source: sketchlayer.sketch_icons[index]
+    smooth: true
+    visible: false
+    fillMode: Image.PreserveAspectCrop
+    
+}
+ThresholdMask{
+    id: sr1
+    threshold: 0.4
+    spread: 0.5
+    anchors.fill: parent
+    source: ico_source
+    maskSource: background_source
+}
+}
+Text{
+    id: sr2
+    anchors{
+        top: rect.bottom
+        horizontalCenter: parent.horizontalCenter
+    }
+    text: sketchlayer.sketch_tille[index]
+    color: theme.palette.normal.backgroundText
+}
+
+MouseArea{
+  anchors.fill: parent
+  onClicked: {
+      tx1.text=sketchlayer.sketch_tille[index]
+      tx2.text=sketchlayer.sketch_link[index]
+      color1.color=sketchlayer.sketch_color[index]
+      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, sketchlayer.sketch_icons[index], tx2.text]
       widgetMain.settings=newSet
       sketchlayer.visible=false
     }
+}
   }
+  }
+    
   OpenButton{
-    id: sketch2
-  anchors{
-    left: parent.left
-    leftMargin: units.gu(2)
-    right: parent.right
-    rightMargin: units.gu(2)
-    top: sketch1.bottom
-    topMargin: units.gu(0.5)
-  }
-  iconOffset: true
-  iconSource: "img/assets_calendar-app.png"
-  text: "Calendar"
-    onClicked: {
-      tx1.text="Calendar"
-      tx2.text="calendar://"
-      color1.color="#383838"
-      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/assets_calendar-app.png", tx2.text]
-      widgetMain.settings=newSet
-      sketchlayer.visible=false
-    }
-  }
-  OpenButton{
-    id: sketch3
-  anchors{
-    left: parent.left
-    leftMargin: units.gu(2)
-    right: parent.right
-    rightMargin: units.gu(2)
-    top: sketch2.bottom
-    topMargin: units.gu(0.5)
-  }
-  iconOffset: true
-  iconSource: "img/desktop_gallery-app.svg"
-  text: "Gallery"
-    onClicked: {
-      tx1.text="Gallery"
-      tx2.text="photo://"
-      color1.color="#006ce3"
-      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/desktop_gallery-app.svg", tx2.text]
-      widgetMain.settings=newSet
-      sketchlayer.visible=false
-    }
-  }
-  OpenButton{
-    id: sketch4
-  anchors{
-    left: parent.left
-    leftMargin: units.gu(2)
-    right: parent.right
-    rightMargin: units.gu(2)
-    top: sketch3.bottom
-    topMargin: units.gu(0.5)
-  }
-  iconOffset: true
-  iconSource: "img/app_weather-app.svg"
-  text: "Weather"
-    onClicked: {
-      tx1.text="Weather"
-      tx2.text="weather://"
-      color1.color="#006ce3"
-      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/app_weather-app.svg", tx2.text]
-      widgetMain.settings=newSet
-      sketchlayer.visible=false
-    }
-  }
-  OpenButton{
-    id: sketch5
-  anchors{
-    left: parent.left
-    leftMargin: units.gu(2)
-    right: parent.right
-    rightMargin: units.gu(2)
-    top: sketch4.bottom
-    topMargin: units.gu(0.5)
-  }
-  iconOffset: true
-  iconSource: "img/app_graphics_music-app.svg"
-  text: "Music"
-    onClicked: {
-      tx1.text="Music"
-      tx2.text="music://"
-      color1.color="#ff1c47"
-      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/app_graphics_music-app.svg", tx2.text]
-      widgetMain.settings=newSet
-      sketchlayer.visible=false
-    }
-  }
-  OpenButton{
-    id: sketch6
-  anchors{
-    left: parent.left
-    leftMargin: units.gu(2)
-    right: parent.right
-    rightMargin: units.gu(2)
-    top: sketch5.bottom
-    topMargin: units.gu(0.5)
-  }
-  iconOffset: true
-  iconSource: "img/Telegram_logo.svg"
-  text: "Telegram"
-    onClicked: {
-      tx1.text="Telegram"
-      tx2.text="tg://"
-      color1.color="#383838"
-      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/Telegram_logo.svg", tx2.text]
-      widgetMain.settings=newSet
-      sketchlayer.visible=false
-    }
-  }
-  OpenButton{
-    id: sketch7
-  anchors{
-    left: parent.left
-    leftMargin: units.gu(2)
-    right: parent.right
-    rightMargin: units.gu(2)
-    top: sketch6.bottom
-    topMargin: units.gu(1)
-  }
-  iconOffset: true
-  iconSource: "img/reminders.svg"
-  text: "Notes"
-    onClicked: {
-      tx1.text="Notes"
-      tx2.text="evernote://"
-      color1.color="#fffb55"
-      var newSet = [color1.color, tx1.text, widgetMain.linkcolor, "img/reminders.svg", tx2.text]
-      widgetMain.settings=newSet
-      sketchlayer.visible=false
-    }
-  }
-  OpenButton{
+    id:sketch_close
   anchors{
     right: parent.right
     rightMargin: units.gu(2)

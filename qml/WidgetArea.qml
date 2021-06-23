@@ -160,9 +160,9 @@ Rectangle{
             width: units.gu(0.2)
         }
         anchors{
-            right: parent.right
-            rightMargin: -units.gu(2)
-            verticalCenter: parent.verticalCenter
+            top: parent.top
+            topMargin: -units.gu(2)
+            horizontalCenter: parent.horizontalCenter;
         }
         Icon {
             source: "../src/img/settings.svg"
@@ -178,7 +178,8 @@ Rectangle{
         }
         onReleased: {
             waitScreen.visible=false
-            stack.push(Qt.createComponent(root.adr_conf).createObject())
+            stack.push(root.adr_conf)
+            //stack.push(Qt.createComponent(root.adr_conf).createObject())
         }
     }}
 }

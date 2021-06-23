@@ -11,7 +11,7 @@
             "content-hub": "src/content-hub.json"
         }
     },
-    "version": "0.8.4",
+    "version": "0.9.0",
     "maintainer": "Pavel Prosto <pavelprosto94@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
