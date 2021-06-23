@@ -178,8 +178,8 @@ Rectangle{
         }
         onReleased: {
             waitScreen.visible=false
-            stack.push(root.adr_conf)
-            //stack.push(Qt.createComponent(root.adr_conf).createObject())
+            //stack.push(root.adr_conf)
+            stack.push(Qt.createComponent(root.adr_conf).createObject())
         }
     }}
 }
